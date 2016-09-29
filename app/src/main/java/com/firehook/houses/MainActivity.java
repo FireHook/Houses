@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 request.setParameters(parameters);
                 request.executeAsync();
 
-                Intent intent = new Intent(getApplicationContext(), RecycledListActivity.class);
+                Intent intent = new Intent(getApplicationContext(), RecyclerListActivity.class);
                 //intent.putExtra("name", name);
                 //intent.putExtra("email", email);
                 startActivity(intent);
@@ -74,6 +76,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onError(FacebookException e) {
 
+            }
+        });
+
+        Button button = (Button) findViewById(R.id.button2);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, RecyclerListActivity.class);
+                startActivity(intent);
             }
         });
 

@@ -8,6 +8,13 @@ import android.view.ViewGroup;
  */
 
 public class MyAdapter extends RecyclerView.Adapter {
+
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         return null;
