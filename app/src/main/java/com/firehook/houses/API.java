@@ -10,6 +10,6 @@ import retrofit2.http.GET;
  */
 
 public interface API {
-    @GET("/buildings/list")
+    @GET("buildings/list")
     Call<List<Item>> getItems();
 }
