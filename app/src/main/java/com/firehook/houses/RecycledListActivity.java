@@ -5,6 +5,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
+import java.io.IOException;
+import java.util.List;
+
+import retrofit2.Call;
+
 /**
  * Created by User on 28.09.2016.
  */
@@ -27,6 +32,15 @@ public class RecycledListActivity extends Activity {
 
         MyAdapter myAdapter = new MyAdapter();
         recyclerView.setAdapter(myAdapter);
+
+        API service = ApiClient.getClient().create(API.class);
+        Call<List<Item>> call = service.getItems();
+
+        try {
+            List<Item> items = call.execute().body();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
