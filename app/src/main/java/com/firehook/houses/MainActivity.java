@@ -52,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
                                 try {
 
                                     String email = object.getString("email");
+                                    String first_name = object.getString("first_name");
+                                    String last_name = object.getString("last_name");
+                                    Log.d("USER EMAIL", email);
                                 } catch (JSONException e) {
                                     e.printStackTrace();
                                 }
@@ -65,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(getApplicationContext(), RecyclerListActivity.class);
                 //intent.putExtra("name", name);
                 //intent.putExtra("email", email);
+
                 startActivity(intent);
             }
 
